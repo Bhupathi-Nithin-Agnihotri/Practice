@@ -24,20 +24,17 @@ tail -n 10 app.log
 chmod a+x script.sh
 # 8. Use a command to search for the word "TODO" in every ".py" file in the current directory
 # Your command here
-for file in $(find . -name "*.py"); do
-    if grep -q "TODO" "$file"; then
-        echo "$file"
-    fi
-done
+grep -rl "TODO" --include="*.py"
 # 9. Show the last 20 commands entered in the terminal
 # Your command here
-history 20
+history | tail -n 20
 # 10. Show processes sorted by memory usage
 # Your command here
-ps aux --sort -%mem
+ps -eo pid,comm,%mem --sort=-%mem
 # 11. Find all directories named "backup" anywhere on the system
 # Your command here
 find / -type d -name "backup"
 # 12. Replace every occurrence of "foo" with "bar" in "example.txt" and save to "new_example.txt"
 # Your command here
+: > new_example.txt
 sed 's/foo/bar/g' example.txt > new_example.txt
