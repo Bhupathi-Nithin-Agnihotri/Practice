@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # 1. Sort the contents of "numbers.txt" in ascending order
 # Your command here
@@ -15,9 +15,7 @@ cat readme.txt
 wc -l data.csv
 # 5. Find all files containing the word "error" in the "logs" folder
 # Your command here
-cd logs
-grep -l "error"*
-cd ..
+grep -rl "error" logs/
 # 6. Display the last 10 lines of "app.log"
 # Your command here
 tail -n 10 app.log
